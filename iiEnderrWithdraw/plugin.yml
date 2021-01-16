@@ -1,0 +1,44 @@
+main: net.iienderr.withdraw.iiEnderrWithdraw
+name: globeWithdraw
+loadbefore: [Essentials]
+version: 1.0
+author: [iiEnderr]
+depend: [Vault]
+softdepend: [mcMMO, ClaimLevels]
+
+commands:
+  withdrawMoney:
+    usage: /withdrawMoney <amount>
+    description: Withdraw a certain amount of money from your balance.
+  xpBottle:
+    usage: /xpBottle <amount>
+    description: Withdraw a certain amount of exp.
+  withdrawMcmmo:
+    usage: /withdrawMcmmo <amount>
+    description: Withdraw a certain amount of mcmmo.
+  givevoucher:
+    usage: /givevoucher <exp/money/mcmmo> <amount> [player]
+    description: Get a note signed by 'Server'
+  exp:
+    description: View you exp balance
+    aliases: [xp]
+
+permissions:
+  globewithdraw.*:
+    description: Gives access to all GlobeWithdraw commands
+    children:
+      globewithdraw.xpbottle: true
+      globewithdraw.withdrawmoney: true
+      globewithdraw.givevoucher: true
+  globewithdraw.xpbottle:
+    description: Use the /xpbottle command.
+    default: true
+  globewithdraw.withdrawmoney:
+    description: Use the /withdrawmoney command.
+    default: true
+  globewithdraw.withdrawmcmmo:
+    description: Use the /withdrawmoney command.
+    default: true
+  globewithdraw.givevoucher:
+    description: Use the /givevoucher command.
+    default: op
